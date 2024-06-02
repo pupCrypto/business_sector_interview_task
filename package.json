@@ -1,0 +1,15 @@
+{
+  "name": "bussiness-sector-interview-task",
+  "version": "1.0.0",
+  "description": "This is interview test task for company Bussiness Sector",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "author": "Egor Bogdanov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
