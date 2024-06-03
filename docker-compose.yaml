@@ -5,8 +5,12 @@ services:
   backend:
     container_name: backend-service
     restart: always
+    networks:
+      - db-network
     build:
       context: .
+    environment:
+      DB_HOST: my-sql-service
     ports:
       - "3000:3000"
     develop:
@@ -21,9 +25,19 @@ services:
         - path: package.json
           action: rebuild
 
-  # my_sql:
-  #   container_name: my_sql-service
-  #   image: mysql
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: root
+  my-sql:
+    container_name: my-sql-service
+    image: mysql
+    restart: always
+    ports:
+     - "3306:3306"
+    networks:
+      - db-network
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql-root
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+
+networks:
+  db-network:
