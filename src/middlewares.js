@@ -1,11 +1,10 @@
 const express = require('express')
+const errorHandler = require('./middlewares/baseErrorHandler');
 const logger = require('./middlewares/logging');
-const strictValidator = require('./middlewares/scrictValidator');
 
 const middlewares = [
     express.json(),
     logger,
-    strictValidator,
 ];
 
 

@@ -11,10 +11,16 @@ services:
       context: .
     environment:
       DB_HOST: my-sql-service
+    depends_on:
+      - my-sql
     ports:
       - "3000:3000"
     develop:
       watch:
+        - path: index.js
+          target: /app/index.js
+          action: sync+restart
+
         - path: src
           target: /app/src
           action: sync+restart

@@ -6,7 +6,8 @@ function strictValidatorMiddleware(req, res, next) {
     if (errors.isEmpty()) {
         return next();
     }
-    res.json(errors.errors);
+    res.status(400);
+    return res.json({errors: errors.errors});
 }
 
 

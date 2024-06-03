@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const CONFIG = require('../config');
-const getNowTimestamp = require('./general');
+const { getNowTimestamp } = require('./general');
 
 function hasIat(payload) {
     return payload.hasOwnProperty('iat');

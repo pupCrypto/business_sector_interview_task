@@ -20,11 +20,12 @@ User.init(
     },
     email: {
         type: DataTypes.STRING(128),
-        allowNull: false
+        allowNull: false,
+        unique: true,
     },
     password: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
     },
     gender: {
         type: DataTypes.ENUM,
@@ -40,6 +41,6 @@ User.init(
   },
 );
 
-User.sync({alter: true});
+User.sync({force: true});
 
 module.exports = User;
