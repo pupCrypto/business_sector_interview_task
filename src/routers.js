@@ -6,4 +6,4 @@ const routers = [
     userRouter,
 ];
 
-exports.routers = routers;
+module.exports = routers;

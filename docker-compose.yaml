@@ -1,8 +1,10 @@
+version: "3.1"
 name: cool-profile-system
 
 services:
   backend:
     container_name: backend-service
+    restart: always
     build:
       context: .
     ports:
@@ -18,3 +20,10 @@ services:
 
         - path: package.json
           action: rebuild
+
+  # my_sql:
+  #   container_name: my_sql-service
+  #   image: mysql
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root

@@ -7,6 +7,7 @@ ENV PORT=3000
 COPY package-lock.json /app/
 COPY package.json /app/
 COPY src /app/src
+COPY index.js /app/
 COPY entrypoint.sh /app/
 
 EXPOSE 3000
