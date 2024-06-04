@@ -5,6 +5,8 @@ services:
   backend:
     container_name: backend-service
     restart: always
+    volumes:
+      - ./static:/app/static
     networks:
       - db-network
     build:
@@ -44,6 +46,24 @@ services:
       MYSQL_DATABASE: mysql
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
+  
+  databacker:
+    image: databack/mysql-backup
+    restart: always
+    container_name: databacker-service
+    depends_on:
+      - my-sql
+    networks:
+      - db-network
+    environment:
+      DB_SERVER: my-sql-service
+      DB_USER: mysql
+      DB_PASS: mysql
+      DB_NAMES: mysql
+
+      DB_DUMP_TARGET: /db
+    volumes:
+      - ./data:/db
 
 networks:
   db-network:

@@ -41,6 +41,6 @@ User.init(
   },
 );
 
-User.sync({force: true});
+User.sync();
 
 module.exports = User;
