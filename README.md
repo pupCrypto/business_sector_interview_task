@@ -1,5 +1,13 @@
 # Cool profile system for Business Sector company
 
+To start locally (please check src/config.js to avoid possible errors)
+```
+npm start
+```
+To start using docker
+```
+docker compose up
+```
 
 ### POST /api/user/register
 Does user registration
