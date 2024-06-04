@@ -10,6 +10,8 @@ const RES_MSG = {
     USER_DOES_NOT_EXISTS: 'Пользователь не существует',
     ACCESS_DENIED: 'Доступ запрещен',
     USER_UPDATED: 'Данные пользователя были успешно обновлены',
+    TOKEN_EXPIRED: 'Токен доступа истек',
+    INTERNAL_ERROR: 'Internal Server Error'
 };
 const STATUS = {
     OK: 'ok',

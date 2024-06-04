@@ -3,6 +3,7 @@ const { UserService } = require('../services/user');
 
 
 async function editProfile(req, res) {
+    throw new Error('asdf');
     const targetUserId = Number(req.params.userId);
     if (req.auth.user.id !== targetUserId) {
         res.status(403);

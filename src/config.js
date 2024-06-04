@@ -3,6 +3,7 @@ const ONE_HOUR = 3600;
 
 const CONFIG = {
     ACCESS_TOKEN_LIFETIME_SECS: Number(env.ACCESS_TOKEN_LIFETIME_SECS) || ONE_HOUR,
+    PORT: env.PORT || '3000',
 
     DB_NAME: env.DB_NAME || 'mysql',
     DB_HOST: env.DB_HOST || 'localhost',

@@ -2,6 +2,7 @@ const express = require('express');
 const controllers = require('../controllers/profile');
 const strictValidator = require('../middlewares/scrictValidator');
 const authMiddleware = require('../middlewares/auth');
+const errorHandler = require('../middlewares/baseErrorHandler');
 
 
 const {
@@ -11,8 +12,8 @@ const {
 } = require('../schemas/req');
 const router = express.Router();
 
-router.put('/profiles/:userId', editProfileSchema, strictValidator, authMiddleware, controllers.editProfile);
-router.get('/profiles/:userId', getProfileSchema, strictValidator, controllers.getProfile);
-router.get('/profiles', getProfilesSchema, controllers.getProfiles);
+router.put('/profiles/:userId', editProfileSchema, strictValidator, authMiddleware, errorHandler(controllers.editProfile));
+router.get('/profiles/:userId', getProfileSchema, strictValidator, errorHandler(controllers.getProfile));
+router.get('/profiles', getProfilesSchema, errorHandler(controllers.getProfiles));
 
 module.exports = router;
