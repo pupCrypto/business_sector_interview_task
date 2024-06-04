@@ -164,17 +164,16 @@ Edits profile info
 #### Example
 ```
 /api/profiles/1
+{
+    "lastName": "admin",
+    "gender": "male",
+}
 ```
 #### 200 Ok
 ``` 
 {
-    "id": 1,
-    "firstName": "admin",
-    "lastName": null,
-    "email": "mail@mail.ru",
-    "gender": null,
-    "photo": null,
-    "regDateTime": "2024-06-04T03:54:17.000Z"
+    "status": "ok",
+    "msg": "Данные пользователя были успешно обновлены"
 }
 ```
 #### 404 Error
